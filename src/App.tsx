@@ -6,7 +6,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <div className="App relative flex min-h-screen flex-col overflow-hidden">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
