@@ -1,0 +1,6 @@
+.dropdown {
+    @apply z-50 flex flex-col bg-white rounded-md shadow-md;
+    @apply bg-white;
+    font-family: inherit;
+    font-weight: inherit;
+  }
