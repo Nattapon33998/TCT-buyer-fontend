@@ -1,21 +1,21 @@
-import React from 'react';
-import ReactModal from 'react-modal';
+import React from "react";
+import ReactModal from "react-modal";
 
-import { ModalProps } from './types';
-import './Modal.css';
+import { ModalProps } from "./types";
+import "./Modal.css";
 
 export const Modal: React.FC<ModalProps> = ({
   className,
-  size = 'xl',
+  size = "xl",
   ...rest
 }) => {
-  const classes = ['modal'];
+  const classes = ["modal"];
 
   if (size) {
     classes.push(`modal-${size}`);
   }
 
-  if (className && typeof className === 'string') {
+  if (className && typeof className === "string") {
     classes.push(className);
   }
 
@@ -23,7 +23,7 @@ export const Modal: React.FC<ModalProps> = ({
     <ReactModal
       {...rest}
       ariaHideApp={false}
-      className={classes.join(' ')}
+      className={classes.join(" ")}
       overlayClassName="modal-overlay"
     />
   );
