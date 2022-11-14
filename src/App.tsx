@@ -2,6 +2,7 @@ import React from "react";
 import "./styles/App.css";
 import Header from "./components/Header";
 import Home from "./components/Home";
+import ProductDetail from "./components/ProductDetail";
 import { Route, Routes, useLocation } from "react-router-dom";
 
 const App: React.FC = () => {
@@ -10,9 +11,7 @@ const App: React.FC = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/product/" element={<ProductDetail />} />
-        <Route path="/mint/" element={<MintProduct />} />
-        <Route path="/farm&farmer/" element={<FarmAndFarmer />} /> */}
+        <Route path="/product/" element={<ProductDetail />} />
       </Routes>
     </div>
   );

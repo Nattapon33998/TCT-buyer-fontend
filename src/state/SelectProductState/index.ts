@@ -1,18 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  selectGroupProductIndex: 0,
+  selectProductIndex: 0,
 };
 
 export const productSlice = createSlice({
-  name: "SelectGroupProductId",
+  name: "selectProductIndex",
   initialState,
   reducers: {
     updateSelectGroupProductIndex: (
       state,
-      { payload: { groupIndex } }: { payload: { groupIndex: number } }
+      { payload: { productIndex } }: { payload: { productIndex: number } }
     ) => {
-      state.selectGroupProductIndex = groupIndex;
+      state.selectProductIndex = productIndex;
     },
   },
 });

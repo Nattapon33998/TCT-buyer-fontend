@@ -2,13 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 
 import productsState from "./ProductState";
-import SelectGroupProductState from "./SelectGroupProductState";
+import SelectProductState from "./SelectProductState";
 
 const store = configureStore({
   reducer: {
     // Add your reducers here
     productsState,
-    SelectGroupProductState,
+    SelectProductState,
   },
 });
 

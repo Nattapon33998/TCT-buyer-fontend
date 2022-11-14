@@ -6,19 +6,19 @@ import { AppState, useAppDispatch } from "../index";
 import { updateSelectGroupProductIndex as updateSelectGroupProductIndexAction } from "./index";
 
 export const useSelectGroupProductIdState = (): {
-  selectGroupProductIndex: number | undefined;
+  selectProductIndex: number | undefined;
   reducers: {
-    updateSelectGroupProductIndex: (data: { groupIndex: number }) => void;
+    updateSelectProductIndex: (data: { productIndex: number }) => void;
   };
 } => {
   const dispatch = useAppDispatch();
   const selectGroupProductIndexState = useSelector<
     AppState,
-    AppState["SelectGroupProductState"]
-  >((state) => state.SelectGroupProductState);
+    AppState["SelectProductState"]
+  >((state) => state.SelectProductState);
 
-  const updateSelectGroupProductIndex = useCallback(
-    (data: { groupIndex: number }) => {
+  const updateSelectProductIndex = useCallback(
+    (data: { productIndex: number }) => {
       dispatch(updateSelectGroupProductIndexAction(data));
     },
     [dispatch]
@@ -26,10 +26,9 @@ export const useSelectGroupProductIdState = (): {
 
   return {
     // Add your actions here
-    selectGroupProductIndex:
-      selectGroupProductIndexState.selectGroupProductIndex,
+    selectProductIndex: selectGroupProductIndexState.selectProductIndex,
     reducers: {
-      updateSelectGroupProductIndex,
+      updateSelectProductIndex,
     },
   };
 };
