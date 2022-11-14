@@ -11,7 +11,7 @@ import { useProductState } from "../../state/ProductState/hook";
 // import { ProductConractAddress } from "../../config/constants/addresses";
 
 const Home: React.FC = () => {
-  const { productsGroupData } = useProductState();
+  const { productsGroupData, productsData } = useProductState();
   console.log(productsGroupData);
   const { library, account } = useEthers();
 
