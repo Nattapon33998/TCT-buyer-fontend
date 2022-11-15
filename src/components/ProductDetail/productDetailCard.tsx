@@ -105,13 +105,13 @@ const ProductDetailCard: React.FC<{
         <ProductTimeLine />
         <div className="flex flex-row justify-center py-5 gap-4">
           <button
-            className="flex flex-row items-center justify-center bg-emerald-800 hover:bg-white text-white hover:text-emerald-800 border-2 hover:border-2 hover:border-emerald-800 font-bold w-36 h-12 rounded-lg ease-in-out duration-200"
+            className="flex flex-row items-center justify-center bg-emerald-800 hover:bg-white text-white hover:text-emerald-800 border-2 hover:border-2 hover:border-emerald-800 font-bold md:w-32 w-28 h-12 rounded-lg ease-in-out duration-200"
             onClick={handleConsumeProductModalOpen}
           >
             <p>Consume</p>
           </button>
           <button
-            className="flex flex-row items-center justify-center bg-amber-500 hover:bg-white text-white hover:text-amber-500 border-2 hover:border-2 hover:border-amber-500 font-bold w-36 h-12 rounded-lg ease-in-out duration-200"
+            className="flex flex-row items-center justify-center bg-amber-500 hover:bg-white text-white hover:text-amber-500 border-2 hover:border-2 hover:border-amber-500 font-bold md:w-32 w-28 h-12 rounded-lg ease-in-out duration-200"
             onClick={handleTransferProductModalOpen}
           >
             <p>Transfer</p>
