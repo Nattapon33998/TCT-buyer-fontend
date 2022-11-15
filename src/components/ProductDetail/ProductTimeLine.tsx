@@ -2,11 +2,11 @@ import React from "react";
 
 const ProductTimeLine: React.FC = () => {
   return (
-    <div className="lg:w-full w-90 h-fit">
+    <div className="w-full h-fit">
       <p className="font-bold text-xl text-emerald-800 left-0 w-full">
         Time line
       </p>
-      <ol className="relative border-l border-gray-200 dark:border-gray-700 ml-4 py-4">
+      <ol className="relative border-l border-gray-300 ml-4 py-4">
         <li className="mb-10 ml-6">
           <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-emerald-200 rounded-full ring-8 ring-white ">
             <svg
@@ -23,16 +23,16 @@ const ProductTimeLine: React.FC = () => {
               ></path>
             </svg>
           </span>
-          <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+          <h3 className="mb-1 text-lg font-semibold text-gray-900">
             0x8f04...11ec{" "}
             <span className="bg-amber-200 text-amber-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3">
               Latest
             </span>
           </h3>
-          <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+          <time className="block mb-2 text-sm font-normal leading-none text-gray-500 ">
             Delivered on December 8th, 2021
           </time>
-          <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+          <p className="text-base font-normal text-gray-400">
             รับผลผลิตทางการเกษตรจาก Big C ลาดกระบัง
           </p>
         </li>
@@ -52,13 +52,13 @@ const ProductTimeLine: React.FC = () => {
               ></path>
             </svg>
           </span>
-          <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+          <h3 className="mb-1 text-lg font-semibold text-gray-900 ">
             Big C ลาดกระบัง
           </h3>
-          <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+          <time className="block mb-2 text-sm font-normal leading-none text-gray-500 ">
             Delivered on December 4th, 2021
           </time>
-          <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+          <p className="text-base font-normal text-gray-400">
             รับผลผลิตทางการเกษตรจาก โรงงานบรรจุผลผลิต
           </p>
         </li>
@@ -78,13 +78,13 @@ const ProductTimeLine: React.FC = () => {
               ></path>
             </svg>
           </span>
-          <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+          <h3 className="mb-1 text-lg font-semibold text-gray-900 ">
             โรงงานบรรจุผลผลิต
           </h3>
-          <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+          <time className="block mb-2 text-sm font-normal leading-none text-gray-500 ">
             Delivered on December 2nd, 2021
           </time>
-          <p className="text-base font-normal text-gray-500 dark:text-gray-400">
+          <p className="text-base font-normal text-gray-400">
             รับผลผลิตทางการเกษตรจาก สวนกล้วยลาดกระบัง
           </p>
         </li>

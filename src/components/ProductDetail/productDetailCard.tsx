@@ -7,7 +7,9 @@ import { MdDescription } from "react-icons/md";
 
 import ProductTimeLine from "./ProductTimeLine";
 
-const ProductDetailCard: React.FC = () => {
+const ProductDetailCard: React.FC<{ handleTransferProductModalOpen: any }> = ({
+  handleTransferProductModalOpen,
+}) => {
   const center = {
     lat: 13.7298941,
     lng: 100.7760436,
@@ -20,11 +22,11 @@ const ProductDetailCard: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center w-fit h-fit bg-stone-100 rounded-lg drop-shadow-xl">
-      <div className="flex flex-col p-4 lg:p-10 w-full gap-2">
+      <div className="flex flex-col p-3 lg:p-10 w-full gap-2">
         <div className="flex flex-col lg:grid lg:grid-cols-5  lg:gap-8 gap-4">
           <div className="col-start-1 col-end-3">
             <div className="flex flex-col gap-4">
-              <div className="bg-red-300 rounded-lg h-72 sm:w-96 w-full">
+              <div className="bg-red-300 rounded-lg h-72 lg:w-96 w-full">
                 <p>Img</p>
               </div>
               <div>
@@ -40,7 +42,7 @@ const ProductDetailCard: React.FC = () => {
                   <MdDescription size={26} />
                   <p className="text-md font-bold">รายละเอียดสินค้า</p>
                 </div>
-                <div className="ml-8">
+                <div className="ml-8 text-gray-700">
                   <p>ชื่อสินค้า : กล้วยหอม</p>
                   <p>จำนวน : 1</p>
                   <p>หน่วย : หวี</p>
@@ -60,7 +62,7 @@ const ProductDetailCard: React.FC = () => {
                   <p>- นายณัฐพนธ์ สุขถาวร</p>
                 </div>
               </div>
-              <div className="flex flex-col text-gray-700 w-96">
+              <div className="flex flex-col text-gray-700 lg:w-96 w-full">
                 <div className="flex flex-row items-center gap-2 font-bold text-lg">
                   <GiBarn size={30} />
                   <p>สถานที่ผลิต</p>
@@ -100,6 +102,20 @@ const ProductDetailCard: React.FC = () => {
 
         <hr className="my-2 bg-gray-800"></hr>
         <ProductTimeLine />
+        <div className="flex flex-row justify-center py-5">
+          <button
+            className="flex flex-row items-center justify-center bg-emerald-800 hover:bg-white text-white hover:text-emerald-800 border-2 hover:border-2 hover:border-emerald-800 font-bold w-36 h-12 rounded-lg ease-in-out duration-200"
+            // onClick={() => setAddFarmerModalIsOpen(true)}
+          >
+            <p>Consume</p>
+          </button>
+          <button
+            className="flex flex-row items-center justify-center bg-amber-500 hover:bg-white text-white hover:text-amber-500 border-2 hover:border-2 hover:border-amber-500 font-bold w-36 h-12 rounded-lg ease-in-out duration-200"
+            onClick={handleTransferProductModalOpen}
+          >
+            <p>Transfer</p>
+          </button>
+        </div>
       </div>
     </div>
   );
