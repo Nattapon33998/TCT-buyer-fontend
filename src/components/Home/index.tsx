@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard";
 
 import { useProductState } from "../../state/ProductState/hook";
 
-import ClaimNftModal from "./ClaimNftModal";
+// import ClaimNftModal from "../Header/ClaimNftModal";
 
 const Home: React.FC = () => {
   const { productsGroupData, productsData } = useProductState();
@@ -19,10 +19,10 @@ const Home: React.FC = () => {
           </div>
         ))}
       </div>
-      <ClaimNftModal
+      {/* <ClaimNftModal
         claimNftModalIsOpen={claimNftModalIsOpen}
         setClaimNftModalIsOpen={setClaimNftModalIsOpen}
-      />
+      /> */}
     </div>
   );
 };

@@ -7,9 +7,10 @@ import { MdDescription } from "react-icons/md";
 
 import ProductTimeLine from "./ProductTimeLine";
 
-const ProductDetailCard: React.FC<{ handleTransferProductModalOpen: any }> = ({
-  handleTransferProductModalOpen,
-}) => {
+const ProductDetailCard: React.FC<{
+  handleTransferProductModalOpen: any;
+  handleConsumeProductModalOpen: any;
+}> = ({ handleTransferProductModalOpen, handleConsumeProductModalOpen }) => {
   const center = {
     lat: 13.7298941,
     lng: 100.7760436,
@@ -105,7 +106,7 @@ const ProductDetailCard: React.FC<{ handleTransferProductModalOpen: any }> = ({
         <div className="flex flex-row justify-center py-5">
           <button
             className="flex flex-row items-center justify-center bg-emerald-800 hover:bg-white text-white hover:text-emerald-800 border-2 hover:border-2 hover:border-emerald-800 font-bold w-36 h-12 rounded-lg ease-in-out duration-200"
-            // onClick={() => setAddFarmerModalIsOpen(true)}
+            onClick={handleConsumeProductModalOpen}
           >
             <p>Consume</p>
           </button>
