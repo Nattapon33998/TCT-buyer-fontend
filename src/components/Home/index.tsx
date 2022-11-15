@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import ProductCard from "./ProductCard";
 
 import { useProductState } from "../../state/ProductState/hook";
 
+import ClaimNftModal from "./ClaimNftModal";
+
 const Home: React.FC = () => {
   const { productsGroupData, productsData } = useProductState();
-  console.log(productsGroupData);
+  const [claimNftModalIsOpen, setClaimNftModalIsOpen] = useState<boolean>(true);
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-full py-10 px-50 gap-8">
@@ -17,6 +19,10 @@ const Home: React.FC = () => {
           </div>
         ))}
       </div>
+      <ClaimNftModal
+        claimNftModalIsOpen={claimNftModalIsOpen}
+        setClaimNftModalIsOpen={setClaimNftModalIsOpen}
+      />
     </div>
   );
 };
