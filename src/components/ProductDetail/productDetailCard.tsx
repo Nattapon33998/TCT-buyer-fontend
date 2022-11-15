@@ -103,7 +103,7 @@ const ProductDetailCard: React.FC<{
 
         <hr className="my-2 bg-gray-800"></hr>
         <ProductTimeLine />
-        <div className="flex flex-row justify-center py-5">
+        <div className="flex flex-row justify-center py-5 gap-4">
           <button
             className="flex flex-row items-center justify-center bg-emerald-800 hover:bg-white text-white hover:text-emerald-800 border-2 hover:border-2 hover:border-emerald-800 font-bold w-36 h-12 rounded-lg ease-in-out duration-200"
             onClick={handleConsumeProductModalOpen}
