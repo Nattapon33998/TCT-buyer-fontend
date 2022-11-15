@@ -4,13 +4,13 @@ import { IoMdClose } from "react-icons/io";
 
 const ClaimNftModal: React.FC<{
   claimNftModalIsOpen: boolean;
-  setClaimNftModalIsOpen: any;
-}> = ({ claimNftModalIsOpen, setClaimNftModalIsOpen }) => {
+  handleClaimNftModalClose: any;
+}> = ({ claimNftModalIsOpen, handleClaimNftModalClose }) => {
   return (
     <Modal
       isOpen={claimNftModalIsOpen}
       size={"lg"}
-      onRequestClose={() => setClaimNftModalIsOpen(false)}
+      onRequestClose={handleClaimNftModalClose}
     >
       <div className="flex flex-col gap-5 px-8 py-2">
         <div className="flex flex-row justify-between items-center">
@@ -19,7 +19,7 @@ const ClaimNftModal: React.FC<{
           </p>
           <button
             className="flex flex-row items-center justify-center hover:bg-red-700 text-gray-500 hover:text-white w-8 h-8 rounded-lg ease-in-out duration-200 gap-1"
-            onClick={() => setClaimNftModalIsOpen(false)}
+            onClick={handleClaimNftModalClose}
           >
             <IoMdClose size={16} />
           </button>
@@ -42,7 +42,7 @@ const ClaimNftModal: React.FC<{
         <div className="flex flex-row justify-center">
           <button
             className="flex flex-row items-center justify-center bg-emerald-800 hover:bg-white text-white hover:text-emerald-800 border-2 hover:border-2 hover:border-emerald-800 font-bold w-36 h-12 rounded-lg ease-in-out duration-200 gap-1"
-            onClick={() => setClaimNftModalIsOpen(false)}
+            onClick={handleClaimNftModalClose}
           >
             <p>Claim product</p>
           </button>

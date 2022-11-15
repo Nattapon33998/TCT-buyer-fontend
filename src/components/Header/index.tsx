@@ -101,7 +101,7 @@ const Header: React.FC = () => {
 
       <ClaimNftModal
         claimNftModalIsOpen={claimNftModalIsOpen}
-        setClaimNftModalIsOpen={setClaimNftModalIsOpen}
+        handleClaimNftModalClose={handleClaimNftModalClose}
       />
     </div>
   );

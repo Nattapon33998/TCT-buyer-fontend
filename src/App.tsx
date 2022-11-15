@@ -3,12 +3,14 @@ import "./styles/App.css";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import ProductDetail from "./components/ProductDetail";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 const App: React.FC = () => {
   return (
-    <div className="App relative flex min-h-screen flex-col overflow-hidden">
-      <Header />
+    <div className="App flex min-h-screen flex-col overflow-hidden ">
+      <div className="sticky top-0 z-50">
+        <Header />
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product/" element={<ProductDetail />} />

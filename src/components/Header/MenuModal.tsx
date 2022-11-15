@@ -1,8 +1,7 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { useEthers, shortenAddress } from "@usedapp/core";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "../uikits/Modal";
-import { IoMdClose } from "react-icons/io";
 
 const MenuModal: React.FC<{
   isMenuModalOpen: any;
@@ -19,9 +18,19 @@ const MenuModal: React.FC<{
     }
   };
 
+  let navigate = useNavigate();
+  const changePage = (path: string): void => {
+    navigate(path);
+  };
+
   const claimProduct = () => {
     handleMenuModalClose();
     handleClaimNftModalOpen();
+  };
+
+  const homeClick = () => {
+    changePage("/");
+    handleMenuModalClose();
   };
 
   return (
@@ -34,7 +43,7 @@ const MenuModal: React.FC<{
         <div className="flex flex-col justify-center">
           <button
             className="flex flex-row items-center hover:bg-gray-200 text-gray-500 hover:text-emerald-800 font-bold w-full h-12 ease-in-out duration-200 gap-1"
-            onClick={handleMenuModalClose}
+            onClick={homeClick}
           >
             <p className="px-4">Home</p>
           </button>
