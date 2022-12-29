@@ -9,7 +9,7 @@ const ProductCard: React.FC<{
   productId: number;
 }> = ({ productId }) => {
   const {
-    reducers: { updateSelectProductIndex },
+    reducers: { updateSelectProductId },
   } = useSelectGroupProductIdState();
 
   let navigate = useNavigate();
@@ -21,9 +21,9 @@ const ProductCard: React.FC<{
   );
 
   const selectThisItem = useCallback(() => {
-    updateSelectProductIndex({ productIndex: productId });
+    updateSelectProductId({ productIndex: productId });
     changePage("/product/");
-  }, [changePage, productId, updateSelectProductIndex]);
+  }, [changePage, productId, updateSelectProductId]);
 
   return (
     <button

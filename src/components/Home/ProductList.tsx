@@ -16,14 +16,10 @@ const ProductList: React.FC = () => {
   );
 
   const { account } = useEthers();
-  const { value, error } =
+  const { value } =
     useCall({ contract, method: "tokensOfOwner", args: [account ?? ""] }) ?? {};
 
   let productItems: any = [];
-
-  if (error) {
-    return <div> fail to load </div>;
-  }
 
   if (!value) {
     return <div> Loading... </div>;
@@ -35,13 +31,14 @@ const ProductList: React.FC = () => {
 
   return (
     <>
-      {productItems.map((item: any) => {
-        return (
-          <div className="flex justify-center" key={item}>
-            <ProductCard productId={item} />
-          </div>
-        );
-      })}
+      {productItems &&
+        productItems.map((item: any) => {
+          return (
+            <div className="flex justify-center" key={item}>
+              <ProductCard productId={item} />
+            </div>
+          );
+        })}
     </>
   );
 };

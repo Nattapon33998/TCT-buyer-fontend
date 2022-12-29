@@ -3,12 +3,12 @@ import { useCallback } from "react";
 
 import { AppState, useAppDispatch } from "../index";
 
-import { updateSelectGroupProductIndex as updateSelectGroupProductIndexAction } from "./index";
+import { updateSelectProductId as updateSelectProductIdAction } from "./index";
 
 export const useSelectGroupProductIdState = (): {
   selectProductIndex: number | undefined;
   reducers: {
-    updateSelectProductIndex: (data: { productIndex: number }) => void;
+    updateSelectProductId: (data: { productIndex: number }) => void;
   };
 } => {
   const dispatch = useAppDispatch();
@@ -17,18 +17,18 @@ export const useSelectGroupProductIdState = (): {
     AppState["SelectProductState"]
   >((state) => state.SelectProductState);
 
-  const updateSelectProductIndex = useCallback(
+  const updateSelectProductId = useCallback(
     (data: { productIndex: number }) => {
-      dispatch(updateSelectGroupProductIndexAction(data));
+      dispatch(updateSelectProductIdAction(data));
     },
     [dispatch]
   );
 
   return {
     // Add your actions here
-    selectProductIndex: selectGroupProductIndexState.selectProductIndex,
+    selectProductIndex: selectGroupProductIndexState.selectProductId,
     reducers: {
-      updateSelectProductIndex,
+      updateSelectProductId,
     },
   };
 };

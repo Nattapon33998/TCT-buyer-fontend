@@ -1,25 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  selectProductIndex: 0,
+  selectProductId: 0,
 };
 
 export const productSlice = createSlice({
-  name: "selectProductIndex",
+  name: "selectProductId",
   initialState,
   reducers: {
-    updateSelectGroupProductIndex: (
+    updateSelectProductId: (
       state,
       { payload: { productIndex } }: { payload: { productIndex: number } }
     ) => {
-      state.selectProductIndex = productIndex;
+      state.selectProductId = productIndex;
     },
   },
 });
 
 export const {
   // Add your actions here
-  updateSelectGroupProductIndex,
+  updateSelectProductId,
 } = productSlice.actions;
 
 export default productSlice.reducer;
