@@ -11,16 +11,16 @@ import productContract from "../../../constants/contractAbis/productContract.jso
 const productContractInterface = new Interface(productContract);
 const contract = new Contract(ProductContractAddress, productContractInterface);
 
-const ProductInfo = (props: any) => {
+const ProductInfo: React.FC<{ id: number }> = ({ id }) => {
   const { value } =
-    useCall({ contract, method: "getProduct", args: [props.id] }) ?? {};
+    useCall({ contract, method: "getProduct", args: [id] }) ?? {};
 
   if (value) {
     return (
       <div className="flex flex-col gap-1 w-full h-2/5 px-5 py-2">
         <div className="flex flex-row justify-between mt-2">
           <p className="text-lg font-bold text-gray-800">{value[0].name}</p>
-          <p className="text-lg font-bold text-gray-500">{`#${props.id}`}</p>
+          <p className="text-lg font-bold text-gray-500">{`#${id}`}</p>
         </div>
         <div className="flex flex-row gap-1 ">
           <div className="text-red-700">
