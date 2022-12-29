@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { useSelectGroupProductIdState } from "../../state/SelectProductState/hook";
 
-const ProductCard: React.FC<{
+const ProductCardTest: React.FC<{
   id: number;
   name: string;
   amount: string;
@@ -65,4 +65,4 @@ const ProductCard: React.FC<{
   );
 };
 
-export default ProductCard;
+export default ProductCardTest;

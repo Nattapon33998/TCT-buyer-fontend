@@ -56,6 +56,7 @@ const initialState = {
       setId: 1,
     },
   ],
+  productIdList: [],
 };
 
 export const productSlice = createSlice({
@@ -65,12 +66,17 @@ export const productSlice = createSlice({
     updateProducts: (state, { payload: { newDate } }) => {
       state.products = newDate;
     },
+    updateProductIdList: (state, { payload: { newData } }) => {
+      console.log(newData);
+      state.productIdList = newData;
+    },
   },
 });
 
 export const {
   // Add your actions here
   updateProducts,
+  updateProductIdList,
 } = productSlice.actions;
 
 export default productSlice.reducer;
