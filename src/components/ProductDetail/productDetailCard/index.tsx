@@ -1,6 +1,5 @@
 import React from "react";
 
-import { FaTractor } from "react-icons/fa";
 import { MdDescription } from "react-icons/md";
 
 import FarmerDetail from "./FarmerDetail";
@@ -43,14 +42,12 @@ const ProductDetailCard: React.FC<{
               <div className="bg-red-300 rounded-lg h-72 lg:w-96 w-full">
                 <p>Img</p>
               </div>
-              <div>
-                <div className="flex flex-row items-center gap-2 text-gray-700">
+              {/* <div className="flex flex-row items-center gap-2 text-gray-700">
                   <FaTractor size={26} />
                   <p className="text-md font-bold ">
                     {`เก็บเกี่ยววันที่ ${new Date().toLocaleDateString()}`}
                   </p>
-                </div>
-              </div>
+                </div> */}
               <div className="flex flex-col gap-2">
                 <div className="flex flex-row items-center gap-2 text-gray-700">
                   <MdDescription size={26} />
