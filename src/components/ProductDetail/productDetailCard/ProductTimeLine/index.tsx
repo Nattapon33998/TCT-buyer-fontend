@@ -25,7 +25,7 @@ const ProductTimeLine: React.FC = () => {
   const { value } = eventLog ?? {};
   value?.reverse();
   // if (value) {
-  //   console.log(reversedValue);
+  //   console.log(value);
   // }
 
   return (
@@ -41,6 +41,7 @@ const ProductTimeLine: React.FC = () => {
                 <HistoryCard
                   key={index}
                   ownerAddress={item.data.owner}
+                  timeStamp={item.data.timeStamp}
                   isLatest={true}
                 />
               );
@@ -49,6 +50,7 @@ const ProductTimeLine: React.FC = () => {
                 <HistoryCard
                   key={index}
                   ownerAddress={item.data.owner}
+                  timeStamp={item.data.timeStamp}
                   isLatest={false}
                 />
               );
