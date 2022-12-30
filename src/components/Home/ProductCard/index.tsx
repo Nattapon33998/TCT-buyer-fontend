@@ -32,7 +32,6 @@ const ProductCard: React.FC<{
     >
       <div className="w-full h-3/5 bg-red-300 rounded-t-lg">img</div>
       <ProductInfo id={productId} />
-      {/* <ProductDetail /> */}
     </button>
   );
 };

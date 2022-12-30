@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal } from "../uikits/Modal";
+import { Modal } from "../../uikits/Modal";
 import { IoMdClose } from "react-icons/io";
 
 const TransferProductModal: React.FC<{

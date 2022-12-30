@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from "react";
 
 import ProductDetailCard from "./productDetailCard";
-import TransferProductModal from "./TransferProductModal";
-import ConsumeProductModal from "./ConsumeProductModal";
+import TransferProductModal from "./modals/TransferProductModal";
+import ConsumeProductModal from "./modals/ConsumeProductModal";
 
 const ProductDetail: React.FC = () => {
   const [isTransferProductModalOpen, setIsTransferProductModalOpen] =
