@@ -68,11 +68,11 @@ const ProductList = () => {
 };
 
 const ProductDetail = (prop: any) => {
-  console.log(prop);
+  // console.log(prop);
   const { value, error } =
     useCall({ contract, method: "getProduct", args: [prop.id] }) ?? {};
 
-  if (value) console.log(value[0]);
+  // if (value) console.log(value[0]);
   if (error) {
     return <div> {error.message} </div>;
   }
@@ -95,12 +95,6 @@ const Event = () => {
   });
 
   const { value, error } = eventLog ?? {};
-  // console.log("Log event");
-  // if (value) {
-  //   for (let i = 0; i < value.length; i++) {
-  //     console.log(`เจ้าของคนที่ ${i + 1} : ${value[i].data.owner}`);
-  //   }
-  // }
 
   if (error) {
     return <div> fail to load </div>;
@@ -109,6 +103,7 @@ const Event = () => {
   if (!value) {
     return <div> Loading... </div>;
   }
+  console.log(value);
   return (
     <div>
       {value ? (

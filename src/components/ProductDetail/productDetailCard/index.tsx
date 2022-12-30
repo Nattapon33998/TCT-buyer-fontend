@@ -5,7 +5,7 @@ import { MdDescription } from "react-icons/md";
 
 import FarmerDetail from "./FarmerDetail";
 import FarmDetail from "./FarmDetail";
-import ProductTimeLine from "../ProductTimeLine";
+import ProductTimeLine from "./ProductTimeLine";
 
 import { useCall } from "@usedapp/core";
 import { Contract } from "ethers";

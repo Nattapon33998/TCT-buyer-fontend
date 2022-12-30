@@ -1,13 +1,64 @@
 import React from "react";
 
+import { useLogs } from "@usedapp/core";
+import { Interface } from "@ethersproject/abi";
+import { ProductContractAddress } from "../../../../constants/contractAddress";
+import productContract from "../../../../constants/contractAbis/productContract.json";
+import { Contract } from "ethers";
+
+import HistoryCard from "./HistoryCard";
+
+import { useSelectGroupProductIdState } from "../../../../state/SelectProductState/hook";
+
 const ProductTimeLine: React.FC = () => {
+  const { selectProductId } = useSelectGroupProductIdState();
+  const productContractInterface = new Interface(productContract);
+  const contract = new Contract(
+    ProductContractAddress,
+    productContractInterface
+  );
+  const eventLog = useLogs({
+    contract,
+    event: "ProductOwner",
+    args: [selectProductId],
+  });
+  const { value } = eventLog ?? {};
+  value?.reverse();
+  // if (value) {
+  //   console.log(reversedValue);
+  // }
+
   return (
     <div className="w-full h-fit">
       <p className="font-bold text-xl text-emerald-800 left-0 w-full">
         Time line
       </p>
       <ol className="relative border-l border-gray-300 ml-4 py-4">
-        <li className="mb-10 ml-6">
+        {value ? (
+          value.map((item, index) => {
+            if (index === 0) {
+              return (
+                <HistoryCard
+                  key={index}
+                  ownerAddress={item.data.owner}
+                  isLatest={true}
+                />
+              );
+            } else {
+              return (
+                <HistoryCard
+                  key={index}
+                  ownerAddress={item.data.owner}
+                  isLatest={false}
+                />
+              );
+            }
+          })
+        ) : (
+          <div> Loading... </div>
+        )}
+        {/* <HistoryCard /> */}
+        {/* <li className="mb-10 ml-6">
           <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-emerald-200 rounded-full ring-8 ring-white ">
             <svg
               aria-hidden="true"
@@ -87,7 +138,7 @@ const ProductTimeLine: React.FC = () => {
           <p className="text-base font-normal text-gray-400">
             รับผลผลิตทางการเกษตรจาก สวนกล้วยลาดกระบัง
           </p>
-        </li>
+        </li> */}
       </ol>
     </div>
   );
