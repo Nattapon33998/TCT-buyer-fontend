@@ -31,7 +31,6 @@ const HistoryCard: React.FC<{
   const { value } =
     useCall({ contract, method: "getPlace", args: [ownerAddress] }) ?? {};
   const date = timeStamp.split("/").map((str) => Number(str));
-  console.log(date);
 
   return (
     <>
@@ -65,9 +64,6 @@ const HistoryCard: React.FC<{
         <time className="block mb-2 text-sm font-normal leading-none text-gray-500 ">
           ได้รับสินค้าวันที่ {date[0]} {mounths[date[1]]} {date[2]}
         </time>
-        {/* <p className="text-base font-normal text-gray-400">
-          รับผลผลิตทางการเกษตรจาก Big C ลาดกระบัง
-        </p> */}
       </li>
     </>
   );
