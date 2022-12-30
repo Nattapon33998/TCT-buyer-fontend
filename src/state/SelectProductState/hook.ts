@@ -6,7 +6,7 @@ import { AppState, useAppDispatch } from "../index";
 import { updateSelectProductId as updateSelectProductIdAction } from "./index";
 
 export const useSelectGroupProductIdState = (): {
-  selectProductIndex: number | undefined;
+  selectProductId: number | undefined;
   reducers: {
     updateSelectProductId: (data: { productIndex: number }) => void;
   };
@@ -26,7 +26,7 @@ export const useSelectGroupProductIdState = (): {
 
   return {
     // Add your actions here
-    selectProductIndex: selectGroupProductIndexState.selectProductId,
+    selectProductId: selectGroupProductIndexState.selectProductId,
     reducers: {
       updateSelectProductId,
     },

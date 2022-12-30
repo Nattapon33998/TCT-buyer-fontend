@@ -1,25 +1,38 @@
 import React from "react";
-import { GoogleMap, useJsApiLoader, MarkerF } from "@react-google-maps/api";
 
 import { FaTractor } from "react-icons/fa";
-import { GiFarmer, GiBarn } from "react-icons/gi";
 import { MdDescription } from "react-icons/md";
 
-import ProductTimeLine from "./ProductTimeLine";
+import FarmerDetail from "./FarmerDetail";
+import FarmDetail from "./FarmDetail";
+import ProductTimeLine from "../ProductTimeLine";
+
+import { useCall } from "@usedapp/core";
+import { Contract } from "ethers";
+import { Interface } from "@ethersproject/abi";
+
+import { ProductContractAddress } from "../../../constants/contractAddress";
+import productContract from "../../../constants/contractAbis/productContract.json";
+
+import { useSelectGroupProductIdState } from "../../../state/SelectProductState/hook";
 
 const ProductDetailCard: React.FC<{
   handleTransferProductModalOpen: any;
   handleConsumeProductModalOpen: any;
 }> = ({ handleTransferProductModalOpen, handleConsumeProductModalOpen }) => {
-  const center = {
-    lat: 13.7298941,
-    lng: 100.7760436,
-  };
+  const { selectProductId } = useSelectGroupProductIdState();
+  const productContractInterface = new Interface(productContract);
+  const contract = new Contract(
+    ProductContractAddress,
+    productContractInterface
+  );
 
-  const { isLoaded } = useJsApiLoader({
-    id: "google-map-script",
-    googleMapsApiKey: "AIzaSyDxnRRzn_NokG3ngxYWCzcYyiLbr8oB2_E",
-  });
+  const { value } =
+    useCall({ contract, method: "getProduct", args: [selectProductId] }) ?? {};
+
+  if (!value) {
+    return <div> Loading... </div>;
+  }
 
   return (
     <div className="flex flex-col items-center w-fit h-fit bg-stone-100 rounded-lg drop-shadow-xl">
@@ -44,59 +57,18 @@ const ProductDetailCard: React.FC<{
                   <p className="text-md font-bold">รายละเอียดสินค้า</p>
                 </div>
                 <div className="ml-8 text-gray-700">
-                  <p>ชื่อสินค้า : กล้วยหอม</p>
-                  <p>จำนวน : 1</p>
-                  <p>หน่วย : หวี</p>
-                  <p>รหัสสินค้า : 1</p>
+                  <p>ชื่อสินค้า : {value[0].name}</p>
+                  <p>จำนวน : {value[0].amount}</p>
+                  <p>หน่วย : {value[0].unit}</p>
+                  <p>รหัสสินค้า : {selectProductId}</p>
                 </div>
               </div>
             </div>
           </div>
           <div className="col-start-3 col-end-6 w-full h-full">
             <div className="flex flex-col gap-4">
-              <div className="flex flex-col text-gray-700">
-                <div className="flex flex-row items-center gap-2 font-bold text-lg">
-                  <GiFarmer size={30} />
-                  <p>เกษตรกรผู้รับผิดชอบการปลูก</p>
-                </div>
-                <div className="ml-10">
-                  <p>- นายณัฐพนธ์ สุขถาวร</p>
-                </div>
-              </div>
-              <div className="flex flex-col text-gray-700 lg:w-96 w-full">
-                <div className="flex flex-row items-center gap-2 font-bold text-lg">
-                  <GiBarn size={30} />
-                  <p>สถานที่ผลิต</p>
-                </div>
-                <div className="ml-10">
-                  <p>สวนกล้วยลาดกระบัง</p>
-                  <p>
-                    1 ซอย ฉลองกรุง 1 แขวง ลาดกระบัง เขตลาดกระบัง กรุงเทพมหานคร
-                    10520 1 ซอย
-                  </p>
-                </div>
-              </div>
-              <div className="h-72 w-full">
-                {isLoaded ? (
-                  <GoogleMap
-                    center={center}
-                    zoom={15}
-                    mapContainerStyle={{ width: "100%", height: "100%" }}
-                    options={{
-                      zoomControl: false,
-                      streetViewControl: false,
-                      mapTypeControl: false,
-                      fullscreenControl: false,
-                    }}
-                    // onLoad={onLoad}
-                    // onUnmount={onUnmount}
-                  >
-                    <MarkerF position={center} />
-                  </GoogleMap>
-                ) : (
-                  <></>
-                )}
-              </div>
+              <FarmerDetail farmerAddress={value[0].farmerAddress} />
+              <FarmDetail farmAddress={value[0].farmAddress} />
             </div>
           </div>
         </div>
