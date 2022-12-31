@@ -16,7 +16,6 @@ const ProductDetail: React.FC = () => {
   }, []);
 
   const handleTransferProductModalClose = useCallback(() => {
-    console.log(isTransactionPending);
     if (!isTransactionPending) setIsTransferProductModalOpen(false);
   }, [isTransactionPending]);
 
