@@ -14,8 +14,13 @@ import { useSelectGroupProductIdState } from "../../../state/SelectProductState/
 
 const TransferProductModal: React.FC<{
   isTransferProductModalOpen: boolean;
+  setIsTransactionPending: any;
   handleTransferProductModalClose: any;
-}> = ({ isTransferProductModalOpen, handleTransferProductModalClose }) => {
+}> = ({
+  isTransferProductModalOpen,
+  setIsTransactionPending,
+  handleTransferProductModalClose,
+}) => {
   const { selectProductId } = useSelectGroupProductIdState();
   const currentDate = new Date();
   const day = currentDate.getDate().toString().padStart(2, "0");
@@ -37,7 +42,7 @@ const TransferProductModal: React.FC<{
     productContract,
     "batchTransferFrom"
   );
-  console.log(state.status);
+  // console.log(state.status);
 
   const transferHandler = async () => {
     const tx = await send(
@@ -46,7 +51,7 @@ const TransferProductModal: React.FC<{
       [selectProductId],
       dateStamp
     );
-    console.log(tx?.transactionHash);
+    // console.log(tx?.transactionHash);
     setTransactionHash(tx?.transactionHash);
   };
 
@@ -60,13 +65,15 @@ const TransferProductModal: React.FC<{
 
   useEffect(() => {
     if (state.status === "Mining") {
+      setIsTransactionPending(true);
       setTransactionStatus("pending");
     }
     if (state.status === "Success") {
+      setIsTransactionPending(true);
       setTransactionStatus("success");
     }
-    console.log("chack state");
-  }, [state.status]);
+    // console.log("chack state");
+  }, [setIsTransactionPending, state.status]);
 
   return (
     <Modal

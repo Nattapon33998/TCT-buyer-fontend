@@ -1,14 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import {
-  useEtherBalance,
   useCall,
   useEthers,
   useLogs,
   useContractFunction,
 } from "@usedapp/core";
 import { Interface } from "@ethersproject/abi";
-import { Contract, ContractInterface } from "ethers";
+import { Contract } from "ethers";
 
 import productContractAbi from "../../constants/contractAbis/productContract.json";
 import { ProductContractAddress } from "../../constants/contractAddress";
@@ -129,7 +128,7 @@ const Event = () => {
 };
 
 const PlayGround: React.FC = () => {
-  const { account, library } = useEthers();
+  const { account } = useEthers();
   const productContractInterface = new Interface(productContractAbi);
   const productContract = new Contract(
     ProductContractAddress,
