@@ -1,13 +1,20 @@
 import React, { useEffect } from "react";
 
-import { useEtherBalance, useCall, useEthers, useLogs } from "@usedapp/core";
+import {
+  useEtherBalance,
+  useCall,
+  useEthers,
+  useLogs,
+  useContractFunction,
+} from "@usedapp/core";
 import { Interface } from "@ethersproject/abi";
-import productContract from "./productContract.json";
-import { Contract } from "ethers";
+import { Contract, ContractInterface } from "ethers";
 
-const productContractInterface = new Interface(productContract);
-const contractAddress = "0x3895cd100932925Ab586ec109AF2120D4d70ab92";
-const contract = new Contract(contractAddress, productContractInterface);
+import productContractAbi from "../../constants/contractAbis/productContract.json";
+import { ProductContractAddress } from "../../constants/contractAddress";
+
+const productContractInterface = new Interface(productContractAbi);
+const contract = new Contract(ProductContractAddress, productContractInterface);
 
 const TotalSupply = () => {
   const { value, error } =
@@ -122,6 +129,27 @@ const Event = () => {
 };
 
 const PlayGround: React.FC = () => {
+  const { account, library } = useEthers();
+  const productContractInterface = new Interface(productContractAbi);
+  const productContract = new Contract(
+    ProductContractAddress,
+    productContractInterface
+  );
+  const callProductContract = useContractFunction(
+    productContract,
+    "batchTransferFrom"
+  );
+
+  const transferHandler = async () => {
+    const tx = await callProductContract.send(
+      account,
+      "0x92165C98D0f24a0991348925aac8Cb155502A57A",
+      [2],
+      "31/12/2022"
+    );
+    console.log(tx);
+  };
+
   return (
     <div>
       <p>Play ground</p>
@@ -130,6 +158,7 @@ const PlayGround: React.FC = () => {
       {/* <ProductDetail id={0} /> */}
       <Event />
       <ProductList />
+      <button onClick={transferHandler}>Transfer</button>
     </div>
   );
 };
