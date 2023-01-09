@@ -39,8 +39,12 @@ const ProductDetailCard: React.FC<{
         <div className="flex flex-col lg:grid lg:grid-cols-5  lg:gap-8 gap-4">
           <div className="col-start-1 col-end-3">
             <div className="flex flex-col gap-4">
-              <div className="bg-red-300 rounded-lg h-72 lg:w-96 w-full">
-                <p>Img</p>
+              <div className="flex flex-row justify-center bg-white rounded-lg h-72 lg:w-96 w-full">
+                <img
+                  className="h-full rounded-lg"
+                  src={value[0].url}
+                  alt="product img"
+                />
               </div>
               {/* <div className="flex flex-row items-center gap-2 text-gray-700">
                   <FaTractor size={26} />
