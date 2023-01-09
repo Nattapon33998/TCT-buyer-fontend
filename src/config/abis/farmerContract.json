@@ -56,6 +56,37 @@
 	},
 	{
 		"inputs": [],
+		"name": "getFarmerAddressList",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getFarmerNameList",
+		"outputs": [
+			{
+				"internalType": "string[]",
+				"name": "",
+				"type": "string[]"
+			},
+			{
+				"internalType": "string[]",
+				"name": "",
+				"type": "string[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "owner",
 		"outputs": [
 			{
@@ -93,6 +124,29 @@
 	{
 		"inputs": [],
 		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_farmerAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_farmerFirstName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_farmerLastName",
+				"type": "string"
+			}
+		],
+		"name": "setFarmer",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"

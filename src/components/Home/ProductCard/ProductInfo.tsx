@@ -5,10 +5,13 @@ import { useCall } from "@usedapp/core";
 import { Contract } from "ethers";
 import { Interface } from "@ethersproject/abi";
 
-import { ProductContractAddress } from "../../../constants/contractAddress";
-import productContract from "../../../constants/contractAbis/productContract.json";
-import { FarmContractAddress } from "../../../constants/contractAddress";
-import farmContract from "../../../constants/contractAbis/farmContract.json";
+// import { ProductContractAddress } from "../../../constants/contractAddress";
+import productContract from "../../../config/abis/productContract.json";
+import farmContract from "../../../config/abis/farmContract.json";
+import {
+  ProductContractAddress,
+  FarmContractAddress,
+} from "../../../config/constants/addresses";
 
 const ProductInfo: React.FC<{ id: number }> = ({ id }) => {
   const productContractInterface = new Interface(productContract);

@@ -5,8 +5,6 @@ import Home from "./components/Home";
 import ProductDetail from "./components/ProductDetail";
 import { Route, Routes } from "react-router-dom";
 
-import PlayGround from "./components/PlayGround";
-
 const App: React.FC = () => {
   return (
     <div className="App flex min-h-screen flex-col overflow-hidden ">
@@ -16,7 +14,6 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product/" element={<ProductDetail />} />
-        <Route path="/test" element={<PlayGround />} />
       </Routes>
     </div>
   );

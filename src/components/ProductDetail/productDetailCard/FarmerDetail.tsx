@@ -3,8 +3,8 @@ import { useCall } from "@usedapp/core";
 import { Contract } from "ethers";
 import { Interface } from "@ethersproject/abi";
 
-import { FarmerContractAddress } from "../../../constants/contractAddress";
-import farmerContract from "../../../constants/contractAbis/farmerContract.json";
+import { FarmerContractAddress } from "../../../config/constants/addresses";
+import farmerContract from "../../../config/abis/farmerContract.json";
 
 import { GiFarmer } from "react-icons/gi";
 

@@ -4,8 +4,8 @@ import { useCall } from "@usedapp/core";
 import { Contract } from "ethers";
 import { Interface } from "@ethersproject/abi";
 
-import { FarmContractAddress } from "../../../constants/contractAddress";
-import farmContract from "../../../constants/contractAbis/farmContract.json";
+import { FarmContractAddress } from "../../../config/constants/addresses";
+import farmContract from "../../../config/abis/farmContract.json";
 
 import { GiBarn } from "react-icons/gi";
 

@@ -10,8 +10,8 @@ import { useCall } from "@usedapp/core";
 import { Contract } from "ethers";
 import { Interface } from "@ethersproject/abi";
 
-import { ProductContractAddress } from "../../../constants/contractAddress";
-import productContract from "../../../constants/contractAbis/productContract.json";
+import { ProductContractAddress } from "../../../config/constants/addresses";
+import productContract from "../../../config/abis/productContract.json";
 
 import { useSelectGroupProductIdState } from "../../../state/SelectProductState/hook";
 

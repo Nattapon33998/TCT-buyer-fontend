@@ -2,8 +2,8 @@ import React from "react";
 
 import { useLogs } from "@usedapp/core";
 import { Interface } from "@ethersproject/abi";
-import { ProductContractAddress } from "../../../../constants/contractAddress";
-import productContract from "../../../../constants/contractAbis/productContract.json";
+import { ProductContractAddress } from "../../../../config/constants/addresses";
+import productContract from "../../../../config/abis/productContract.json";
 import { Contract } from "ethers";
 
 import HistoryCard from "./HistoryCard";

@@ -2,8 +2,8 @@ import React from "react";
 
 import { useCall, shortenAddress } from "@usedapp/core";
 import { Interface } from "@ethersproject/abi";
-import { PlaceContractAddress } from "../../../../constants/contractAddress";
-import placeContract from "../../../../constants/contractAbis/placeContract.json";
+import { PlaceContractAddress } from "../../../../config/constants/addresses";
+import placeContract from "../../../../config/abis/placeContract.json";
 import { Contract } from "ethers";
 
 enum mounths {

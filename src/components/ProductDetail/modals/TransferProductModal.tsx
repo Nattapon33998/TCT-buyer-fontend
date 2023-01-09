@@ -7,8 +7,8 @@ import { useEthers, useContractFunction } from "@usedapp/core";
 import { Interface } from "@ethersproject/abi";
 import { Contract } from "ethers";
 
-import productContractAbi from "../../../constants/contractAbis/productContract.json";
-import { ProductContractAddress } from "../../../constants/contractAddress";
+import productContractAbi from "../../../config/abis/productContract.json";
+import { ProductContractAddress } from "../../../config/constants/addresses";
 
 import { useSelectGroupProductIdState } from "../../../state/SelectProductState/hook";
 

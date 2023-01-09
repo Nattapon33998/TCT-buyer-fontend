@@ -27,11 +27,11 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "_farmAddress",
+				"name": "_placeAddress",
 				"type": "address"
 			}
 		],
-		"name": "getFarm",
+		"name": "getPlace",
 		"outputs": [
 			{
 				"components": [
@@ -53,24 +53,40 @@
 								"type": "string"
 							}
 						],
-						"internalType": "struct FarmContract.Location",
+						"internalType": "struct PlaceContract.Location",
 						"name": "location",
 						"type": "tuple"
-					},
-					{
-						"internalType": "string",
-						"name": "farmCertificationId",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "farmDetail",
-						"type": "string"
 					}
 				],
-				"internalType": "struct FarmContract.Farm",
+				"internalType": "struct PlaceContract.Place",
 				"name": "",
 				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getPlaceNameList",
+		"outputs": [
+			{
+				"internalType": "string[]",
+				"name": "",
+				"type": "string[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getPlacesAddressList",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "",
+				"type": "address[]"
 			}
 		],
 		"stateMutability": "view",
@@ -93,7 +109,7 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "_farmAddress",
+				"name": "_placeAddress",
 				"type": "address"
 			},
 			{
@@ -110,19 +126,9 @@
 				"internalType": "string",
 				"name": "_longitude",
 				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_farmCertificationId",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_farmDetail",
-				"type": "string"
 			}
 		],
-		"name": "registerFarm",
+		"name": "registerPlace",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -138,16 +144,26 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "_farmAddress",
+				"name": "_placeAddress",
 				"type": "address"
 			},
 			{
 				"internalType": "string",
-				"name": "_id",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_latitude",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_longitude",
 				"type": "string"
 			}
 		],
-		"name": "setFarmCertificationId",
+		"name": "setPlace",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -156,25 +172,7 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "_farmAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "_detail",
-				"type": "string"
-			}
-		],
-		"name": "setFarmDetail",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_farmAddress",
+				"name": "_placeAddress",
 				"type": "address"
 			},
 			{
@@ -188,7 +186,7 @@
 				"type": "string"
 			}
 		],
-		"name": "setFarmLocation",
+		"name": "setPlaceLocation",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -197,7 +195,7 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "_farmAddress",
+				"name": "_placeAddress",
 				"type": "address"
 			},
 			{
@@ -206,7 +204,7 @@
 				"type": "string"
 			}
 		],
-		"name": "setFarmName",
+		"name": "setPlaceName",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
