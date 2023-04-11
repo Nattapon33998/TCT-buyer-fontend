@@ -1,7 +1,10 @@
 export const ProductContractAddress =
-  "0x6a3E01CFe67F7121a9708ee7e5ce25AF8525088e";
-export const FarmContractAddress = "0xDd60E3d652C7b589D6e79BA5dBde70893C319f48";
+  "0xA3e00913FD83Eaa64Aa23651F0Ede805386B0d15";
+//0x950309a221386535aCc38d9355c4b3123e7224d3
+export const FarmContractAddress = "0xd24728a35a4f61BE1c35F87b8C2430616135786F";
 export const FarmerContractAddress =
-  "0xF3a7df3D285aBC32171774422dCE2426d8744feF";
+  "0xF461FaDef7E7fF8CB8434189eEEDE43932Dacfca";
 export const PlaceContractAddress =
-  "0xFcD4169da3C746Abd5A497113D261A38C9EA1A33";
+  "0xE9690c9F422e66E89DC508B2cf85DedBa17D615c";
+export const MarketContractAddress =
+  "0x0b6Bf09A3Ad2e8DA510bc7ccF437585ba2940Be5";

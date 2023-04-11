@@ -9,6 +9,7 @@ const Header: React.FC = () => {
   const [isMenuModalOpen, setIsMenuModalOpen] = useState(false);
   const [claimNftModalIsOpen, setClaimNftModalIsOpen] =
     useState<boolean>(false);
+  const [isTransactionPending, setIsTransactionPending] = useState(false);
 
   let navigate = useNavigate();
   const changePage = (path: string): void => {
@@ -36,8 +37,8 @@ const Header: React.FC = () => {
   }, []);
 
   const handleClaimNftModalClose = useCallback(() => {
-    setClaimNftModalIsOpen(false);
-  }, []);
+    if (!isTransactionPending) setClaimNftModalIsOpen(false);
+  }, [isTransactionPending]);
 
   return (
     <div className="flex md:flex-row items-center justify-between p-2 border-b bg-emerald-800 h-16 px-8 w-full gap-2">
@@ -102,6 +103,7 @@ const Header: React.FC = () => {
       <ClaimNftModal
         claimNftModalIsOpen={claimNftModalIsOpen}
         handleClaimNftModalClose={handleClaimNftModalClose}
+        setIsTransactionPending={setIsTransactionPending}
       />
     </div>
   );
