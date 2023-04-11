@@ -8,7 +8,7 @@ import { Interface } from "@ethersproject/abi";
 import { ProductContractAddress } from "../../config/constants/addresses";
 import productContract from "../../config/abis/productContract.json";
 
-const ProductList: React.FC = () => {
+const ProductList: React.FC<{ status: string }> = ({ status }) => {
   const productContractInterface = new Interface(productContract);
   const contract = new Contract(
     ProductContractAddress,
