@@ -24,9 +24,6 @@ const ProductTimeLine: React.FC = () => {
   });
   const { value } = eventLog ?? {};
   value?.reverse();
-  // if (value) {
-  //   console.log(value);
-  // }
 
   return (
     <div className="w-full h-fit">

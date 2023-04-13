@@ -42,7 +42,6 @@ const TransferProductModal: React.FC<{
     productContract,
     "batchTransferFrom"
   );
-  // console.log(state.status);
 
   const transferHandler = async () => {
     const tx = await send(
@@ -51,7 +50,6 @@ const TransferProductModal: React.FC<{
       [selectProductId],
       dateStamp
     );
-    // console.log(tx?.transactionHash);
     setTransactionHash(tx?.transactionHash);
   };
 
@@ -72,7 +70,6 @@ const TransferProductModal: React.FC<{
       setIsTransactionPending(true);
       setTransactionStatus("success");
     }
-    // console.log("chack state");
   }, [setIsTransactionPending, state.status]);
 
   return (
