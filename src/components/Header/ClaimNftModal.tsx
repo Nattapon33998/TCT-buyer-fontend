@@ -58,7 +58,6 @@ const ClaimNftModal: React.FC<{
   const { state, send } = useContractFunction(marketContract, "claimProduct");
 
   const sendToShelfHandler = async () => {
-    console.log(inputProductId(input));
     const tx = await send(inputProductId(input), dateStamp);
     setTransactionHash(tx?.transactionHash);
   };

@@ -10,6 +10,8 @@ const ProductDetail: React.FC = () => {
   const [isConsumeProductModalOpen, setIsConsumeProductModalOpen] =
     useState(false);
   const [isTransactionPending, setIsTransactionPending] = useState(false);
+  const [isConsumedTransactionPending, setIsConsumedTransactionPending] =
+    useState(false);
 
   const handleTransferProductModalOpen = useCallback(() => {
     setIsTransferProductModalOpen(true);
@@ -36,6 +38,7 @@ const ProductDetail: React.FC = () => {
       <ConsumeProductModal
         isConsumeProductModalOpen={isConsumeProductModalOpen}
         handleConsumeProductModalClose={handleConsumeProductModalClose}
+        setIsTransactionPending={setIsConsumedTransactionPending}
       />
       <TransferProductModal
         isTransferProductModalOpen={isTransferProductModalOpen}
