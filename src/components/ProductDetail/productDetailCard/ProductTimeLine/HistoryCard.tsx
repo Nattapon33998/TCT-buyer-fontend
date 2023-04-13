@@ -2,7 +2,10 @@ import React from "react";
 
 import { useCall, shortenAddress } from "@usedapp/core";
 import { Interface } from "@ethersproject/abi";
-import { PlaceContractAddress } from "../../../../config/constants/addresses";
+import {
+  PlaceContractAddress,
+  MarketContractAddress,
+} from "../../../../config/constants/addresses";
 import placeContract from "../../../../config/abis/placeContract.json";
 import { Contract } from "ethers";
 
@@ -51,7 +54,9 @@ const HistoryCard: React.FC<{
           </svg>
         </span>
         <h3 className="mb-1 text-lg font-semibold text-gray-900">
-          {value && value[0].name
+          {ownerAddress === MarketContractAddress
+            ? "วางจำหน่าย"
+            : value && value[0].name
             ? value[0].name
             : shortenAddress(ownerAddress)}
 

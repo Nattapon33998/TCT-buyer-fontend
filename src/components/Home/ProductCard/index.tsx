@@ -18,7 +18,8 @@ import { useSelectGroupProductIdState } from "../../../state/SelectProductState/
 
 const ProductCard: React.FC<{
   productId: number;
-}> = ({ productId }) => {
+  status: string;
+}> = ({ productId, status }) => {
   const {
     reducers: { updateSelectProductId },
   } = useSelectGroupProductIdState();
@@ -57,6 +58,12 @@ const ProductCard: React.FC<{
       method: "getFarm",
       args: [productValue?.[0].farmAddress],
     }) ?? {};
+
+  if (status === "fresh" && productValue && productValue[0].consumed)
+    return null;
+
+  if (status === "consumed" && productValue && !productValue[0].consumed)
+    return null;
 
   return (
     <button
